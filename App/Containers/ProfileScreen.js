@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ScrollView, Text} from 'react-native';
 import {connect} from 'react-redux';
 import FullButton from '../Components/FullButton';
-import NavBar from '../Navigation/NavBar';
+import NavBar from '../Components/NavBar';
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
