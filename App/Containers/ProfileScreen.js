@@ -1,11 +1,13 @@
-import React, {Component} from 'react'
-import {ScrollView, Text} from 'react-native'
-import {connect} from 'react-redux'
+import React, {Component} from 'react';
+import {ScrollView, Text, Image, View} from 'react-native';
+import {connect} from 'react-redux';
+import FullButton from '../Components/FullButton';
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
 // Styles
-import styles from './Styles/ProfileScreenStyle'
+import styles from './Styles/ProfileScreenStyle';
 
 class ProfileScreen extends Component {
   // constructor (props) {
@@ -13,21 +15,39 @@ class ProfileScreen extends Component {
   //   this.state = {}
   // }
 
-  render () {
+  render() {
     return (
       <ScrollView style={styles.container}>
-        <Text>ProfileScreen Container</Text>
+        <View
+          style={{
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 500,
+          }}>
+          <Image
+            style={{width: 100, height: 100}}
+            source={require('../Images/34.jpeg')}
+          />
+          <Text>test text</Text>
+        </View>
+
+        <FullButton text="Learn More" />
+        <FullButton text="All Activities" />
       </ScrollView>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
-  return {}
-}
+  return {};
+};
 
 const mapDispatchToProps = dispatch => {
-  return {}
-}
+  return {};
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ProfileScreen);
