@@ -24,4 +24,12 @@ export default StyleSheet.create({
     marginBottom: 5,
     textAlign: 'left',
   },
+  skills: {
+    backgroundColor: Colors.lightBlue,
+    borderRadius: 5,
+    height: 40,
+    justifyContent: 'center',
+    margin: 4,
+    paddingHorizontal: 7,
+  },
 });

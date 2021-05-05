@@ -77,15 +77,7 @@ class ProfileScreen extends Component {
   render() {
     const mappedSkills = this.state.skills.map((e, i) => {
       return (
-        <View
-          key={i}
-          style={{
-            backgroundColor: Colors.lightBlue,
-            height: 40,
-            justifyContent: 'center',
-            margin: 4,
-            paddingHorizontal: 7,
-          }}>
+        <View key={i} style={styles.skills}>
           <Text
             style={{
               color: Colors.facebook,
