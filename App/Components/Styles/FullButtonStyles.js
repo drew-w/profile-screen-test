@@ -3,12 +3,13 @@ import {Fonts, Colors} from '../../Themes/';
 
 export default StyleSheet.create({
   button: {
-    marginVertical: 5,
+    // marginVertical: 5,
     borderTopColor: Colors.cloud,
     borderBottomColor: Colors.transparent,
     borderTopWidth: 2,
     borderBottomWidth: 0,
     backgroundColor: Colors.transparent,
+    marginTop: 'auto',
   },
   buttonText: {
     margin: 18,
