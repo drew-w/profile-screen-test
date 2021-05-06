@@ -12,7 +12,7 @@ const NavBar = () => {
         key={i}
         name={e}
         size={30}
-        color={e === 'angle-double-up' ? Colors.facebook : Colors.steel}
+        color={e === 'angle-double-up' ? Colors.blue : Colors.steel}
         backgroundColor="transparent"
         onPress={() => window.alert('navigating to other view')}
       />
