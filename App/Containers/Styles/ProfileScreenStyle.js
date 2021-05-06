@@ -27,7 +27,7 @@ export default StyleSheet.create({
   skills: {
     backgroundColor: Colors.lightBlue,
     borderRadius: 5,
-    height: 40,
+    height: 35,
     justifyContent: 'center',
     margin: 4,
     paddingHorizontal: 7,

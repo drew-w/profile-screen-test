@@ -2,6 +2,7 @@ const colors = {
   background: '#1F0808',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
+  blue: '#698cff',
   transparent: 'rgba(0,0,0,0)',
   silver: '#F7F7F7',
   steel: '#CCCCCC',
@@ -22,7 +23,7 @@ const colors = {
   border: '#483F53',
   banner: '#5F3E63',
   text: '#E0D7E5',
-  lightBlue: '#cee8f0',
+  lightBlue: '#f1f5ff',
   green: '#32CD32',
 };
 

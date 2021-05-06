@@ -19,50 +19,6 @@ class ProfileScreen extends Component {
     this.state = {
       activityModalVisible: false,
       aboutModalVisible: false,
-      name: 'Nathan Garcia',
-      picture: require('../Images/34.jpeg'),
-      isOnline: true,
-      position: 'UI/UX Designer',
-      about:
-        'Not so many years ago businesses used to grunt at using illustrations in their marketing materials. But today, the use and influence of illustrations is growing right along. An illustration, image, or picture that does not express a distinct idea is a poor illustration.',
-      skills: ['Business', 'Management', 'Creativity', 'Webdesign', 'PHP'],
-      recentActivity: [
-        {
-          icon: 'calendar',
-          date: '28 February',
-          details: 'Meeting with client',
-        },
-        {
-          icon: 'briefcase',
-          date: '1 March',
-          details: 'New incoming request',
-        },
-        {
-          icon: 'calendar',
-          date: '2 March',
-          details: 'Meeting with client',
-        },
-        {
-          icon: 'check-circle',
-          date: '8 March',
-          details: 'Marked 12 Tasks Done',
-        },
-        {
-          icon: 'briefcase',
-          date: '13 March',
-          details: 'New incoming request',
-        },
-        {
-          icon: 'credit-card',
-          date: '16 March',
-          details: 'Payout processed',
-        },
-        {
-          icon: 'briefcase',
-          date: '20 March',
-          details: 'Marked 12 Tasks Done',
-        },
-      ],
     };
   }
 
@@ -75,12 +31,14 @@ class ProfileScreen extends Component {
   };
 
   render() {
-    const mappedSkills = this.state.skills.map((e, i) => {
+    // console.log(this.props.userInfo);
+    const {userInfo} = this.props;
+    const mappedSkills = userInfo.skills.map((e, i) => {
       return (
         <View key={i} style={styles.skills}>
           <Text
             style={{
-              color: Colors.facebook,
+              color: Colors.blue,
             }}>
             {e}
           </Text>
@@ -88,7 +46,7 @@ class ProfileScreen extends Component {
       );
     });
 
-    const mappedActivity = this.state.recentActivity.map((e, i) => {
+    const mappedActivity = userInfo.recentActivity.map((e, i) => {
       return (
         <View
           key={i}
@@ -130,7 +88,7 @@ class ProfileScreen extends Component {
       <ScrollView style={styles.container}>
         <Modal visible={aboutModalVisible} animationType="slide">
           <View style={styles.modal}>
-            <Text style={styles.heading}>More About {this.state.name}:</Text>
+            <Text style={styles.heading}>More About {userInfo.name}:</Text>
             <FakeInfo />
             <RoundedButton
               onPress={() => this.setAboutModal(!aboutModalVisible)}>
@@ -172,9 +130,9 @@ class ProfileScreen extends Component {
                   borderWidth: 0,
                   marginBottom: 10,
                 }}
-                source={this.state.picture}
+                source={userInfo.picture}
               />
-              {this.state.isOnline ? (
+              {userInfo.isOnline ? (
                 <View
                   style={{
                     backgroundColor: Colors.green,
@@ -198,10 +156,10 @@ class ProfileScreen extends Component {
                 fontSize: 20,
                 marginBottom: 5,
               }}>
-              {this.state.name}
+              {userInfo.name}
             </Text>
             <Text style={{color: Colors.charcoal, textAlign: 'center'}}>
-              {this.state.position}
+              {userInfo.position}
             </Text>
           </View>
           <View
@@ -248,7 +206,7 @@ class ProfileScreen extends Component {
               color: Colors.charcoal,
               lineHeight: 25,
             }}>
-            {this.state.about}
+            {userInfo.about}
           </Text>
           <View
             style={{
@@ -313,7 +271,9 @@ const IconButton = ({name, margin}) => {
 };
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    userInfo: state.user.userInfo,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
